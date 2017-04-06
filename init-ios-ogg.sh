@@ -18,7 +18,7 @@
 IJK_OGG_UPSTREAM=https://github.com/xiph/ogg.git
 IJK_OGG_FORK=https://github.com/xiph/ogg.git
 IJK_OGG_COMMIT=v1.3.2
-IJK_OGG_LOCAL_REPO=extra/ogg
+IJK_OGG_LOCAL_REPO=extraSpeex/ogg
 
 set -e
 TOOLS=tools

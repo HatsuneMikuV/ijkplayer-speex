@@ -18,7 +18,7 @@
 IJK_SPEEXDSP_UPSTREAM=https://github.com/pili-engineering/pili-speexdsp.git
 IJK_SPEEXDSP_FORK=https://github.com/pili-engineering/pili-speexdsp.git
 IJK_SPEEXDSP_COMMIT=SpeexDSP-1.2rc3
-IJK_SPEEXDSP_LOCAL_REPO=extra/speexdsp
+IJK_SPEEXDSP_LOCAL_REPO=extraSpeex/speexdsp
 
 set -e
 TOOLS=tools

@@ -1,20 +1,21 @@
 # ijkplayer-speex
 ijkplayer with speex support(iOS)
 
+仅限于iOS端对speex的集成
 
-# because the company project requirements, must compile speex audio files are added to the ffmepg repository
-# 因公司项目需求，必须把speex音频编译文件添加到ffmepg库里面
-# oneself fumble with git lookup can made a compilation of speex library
-# 自己摸索加git查找做了一个能编译speex库
+because the company project requirements, must compile speex audio files are added to the ffmepg repository
+因公司项目需求，必须把speex音频编译文件添加到ffmepg库里面
+oneself fumble with git lookup can made a compilation of speex library
+自己摸索加git查找做了一个能编译speex库
 
 
-# to compile speex library into ffmpeg, and need to compile speex library
-# 要把speex库编译进入ffmpeg里面，需要先编译speex库
-# will need speex before compilation of ffmpeg, relevant agreements in ffmpeg configuration file to open
-# 在编译ffmpeg之前需要将speex，相应协议在ffmpeg配置文件里面打开
+to compile speex library into ffmpeg, and need to compile speex library
+要把speex库编译进入ffmpeg里面，需要先编译speex库
+will need speex before compilation of ffmpeg, relevant agreements in ffmpeg configuration file to open
+在编译ffmpeg之前需要将speex，相应协议在ffmpeg配置文件里面打开（配置已被打开 --enable-decoder=libspeex）
 
-# the ffmpeg is based on IJKPlayer to compile (https://github.com/Bilibili/ijkplayer)
-# 此ffmpeg是基于IJKPlayer来编译（https://github.com/Bilibili/ijkplayer）
+the ffmpeg is based on IJKPlayer to compile (https://github.com/Bilibili/ijkplayer)
+此ffmpeg是基于IJKPlayer来编译（https://github.com/Bilibili/ijkplayer）
 
 
 # ijkplayer
