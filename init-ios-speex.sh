@@ -16,7 +16,7 @@
 #
 
 IJK_SPEEX_UPSTREAM=https://github.com/xiph/speex
-IJK_SPEEX_FORK=https://github.com/pili-engineering/pili-speex.git
+IJK_SPEEX_FORK=https://github.com/HatsuneMikuV/speex.git
 IJK_SPEEX_COMMIT=Speex-1.2rc1
 IJK_SPEEX_LOCAL_REPO=extraSpeex/speex
 
