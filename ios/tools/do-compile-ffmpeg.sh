@@ -103,7 +103,7 @@ echo "build_root: $FF_BUILD_ROOT"
 echo "===================="
 echo "[*] check gas-preprocessor"
 echo "===================="
-FF_TOOLS_ROOT="$FF_BUILD_ROOT/../extra"
+FF_TOOLS_ROOT="$FF_BUILD_ROOT/../extraSpeex"
 export PATH="$FF_TOOLS_ROOT/gas-preprocessor:$PATH"
 
 echo "gasp: $FF_TOOLS_ROOT/gas-preprocessor/gas-preprocessor.pl"

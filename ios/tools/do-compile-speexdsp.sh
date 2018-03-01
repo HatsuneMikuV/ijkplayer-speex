@@ -68,7 +68,7 @@ SPEEX_EXTRA_CFLAGS=
 SPEEX_CFG_CPU=
 
 # i386, x86_64
-SPEEX_CFG_FLAGS_SIMULATOR=
+SPEEX_CFG_FLAGS_SIMULATOR="--host=arm"
 
 # armv7, armv7s, arm64
 SPEEX_CFG_FLAGS_ARM=
@@ -90,10 +90,12 @@ if [ "$FF_ARCH" = "i386" ]; then
     FF_BUILD_NAME="speexdsp-i386"
     FF_XCRUN_PLATFORM="iPhoneSimulator"
     FF_XCRUN_OSVERSION="-mios-simulator-version-min=6.0"
+    SPEEX_CFG_FLAGS="--disable-neon $SPEEX_CFG_FLAGS_SIMULATOR $SPEEX_CFG_FLAGS"
 elif [ "$FF_ARCH" = "x86_64" ]; then
     FF_BUILD_NAME="speexdsp-x86_64"
     FF_XCRUN_PLATFORM="iPhoneSimulator"
     FF_XCRUN_OSVERSION="-mios-simulator-version-min=7.0"
+    SPEEX_CFG_FLAGS="--disable-neon $SPEEX_CFG_FLAGS_SIMULATOR $SPEEX_CFG_FLAGS"
 elif [ "$FF_ARCH" = "armv7" ]; then
     FF_BUILD_NAME="speexdsp-armv7"
     FF_XCRUN_OSVERSION="-miphoneos-version-min=6.0"

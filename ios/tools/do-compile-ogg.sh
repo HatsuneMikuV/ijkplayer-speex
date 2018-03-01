@@ -68,7 +68,7 @@ OGG_EXTRA_CFLAGS=
 OGG_CFG_CPU=
 
 # i386, x86_64
-OGG_CFG_FLAGS_SIMULATOR=
+OGG_CFG_FLAGS_SIMULATOR="--host=arm"
 
 # armv7, armv7s, arm64
 OGG_CFG_FLAGS_ARM=
@@ -90,17 +90,16 @@ if [ "$FF_ARCH" = "i386" ]; then
     FF_BUILD_NAME="ogg-i386"
     FF_XCRUN_PLATFORM="iPhoneSimulator"
     FF_XCRUN_OSVERSION="-mios-simulator-version-min=6.0"
-    #OGG_CFG_FLAGS="darwin-i386-cc $OGG_CFG_FLAGS"
+    OGG_CFG_FLAGS="$OGG_CFG_FLAGS_SIMULATOR $OGG_CFG_FLAGS"
 elif [ "$FF_ARCH" = "x86_64" ]; then
     FF_BUILD_NAME="ogg-x86_64"
     FF_XCRUN_PLATFORM="iPhoneSimulator"
     FF_XCRUN_OSVERSION="-mios-simulator-version-min=7.0"
-    #OGG_CFG_FLAGS="darwin64-x86_64-cc $OGG_CFG_FLAGS"
+    OGG_CFG_FLAGS="$OGG_CFG_FLAGS_SIMULATOR $OGG_CFG_FLAGS"
 elif [ "$FF_ARCH" = "armv7" ]; then
     FF_BUILD_NAME="ogg-armv7"
     FF_XCRUN_OSVERSION="-miphoneos-version-min=6.0"
     OGG_CFG_FLAGS="$OGG_CFG_FLAGS_ARM $OGG_CFG_FLAGS"
-#    OPENSSL_CFG_CPU="--cpu=cortex-a8"
 elif [ "$FF_ARCH" = "armv7s" ]; then
     FF_BUILD_NAME="ogg-armv7s"
     OGG_CFG_CPU="--cpu=swift"
