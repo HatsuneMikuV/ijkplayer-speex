@@ -12,7 +12,7 @@ ijkplayer with speex support(iOS)
 - will need speex before compilation of ffmpeg, relevant agreements in ffmpeg configuration file to open
 - 在编译ffmpeg之前需要将speex，相应协议在ffmpeg配置文件里面打开（配置已被打开 --enable-decoder=libspeex）
 - the ffmpeg is based on IJKPlayer to compile (https://github.com/Bilibili/ijkplayer)
-- 此ffmpeg是基于IJKPlayer来编译（https://github.com/Bilibili/ijkplayer）
+- 此ffmpeg是基于IJKPlayer来编译（https://github.com/Bilibili/ijkplayer)
 
 
 # ijkplayer
