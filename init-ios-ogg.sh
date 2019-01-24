@@ -20,6 +20,8 @@ IJK_OGG_FORK=https://github.com/xiph/ogg.git
 IJK_OGG_COMMIT=v1.3.2
 IJK_OGG_LOCAL_REPO=extraSpeex/ogg
 
+FF_TARGET=$1
+
 set -e
 TOOLS=tools
 
@@ -35,8 +37,8 @@ function pull_fork()
     cd -
 }
 
-pull_fork "armv7"
-pull_fork "armv7s"
-pull_fork "arm64"
-pull_fork "i386"
-pull_fork "x86_64"
+
+for FF_SH in $FF_TARGET
+do
+    pull_fork $FF_SH
+done

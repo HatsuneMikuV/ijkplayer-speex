@@ -20,6 +20,9 @@ IJK_OPENSSL_FORK=https://github.com/Bilibili/openssl.git
 IJK_OPENSSL_COMMIT=OpenSSL_1_0_2h
 IJK_OPENSSL_LOCAL_REPO=extraSpeex/openssl
 
+FF_TARGET=$1
+
+
 set -e
 TOOLS=tools
 
@@ -35,9 +38,9 @@ function pull_fork()
     cd -
 }
 
-pull_fork "armv7"
-pull_fork "armv7s"
-pull_fork "arm64"
-pull_fork "i386"
-pull_fork "x86_64"
+
+for FF_SH in $FF_TARGET
+do
+    pull_fork $FF_SH
+done
 

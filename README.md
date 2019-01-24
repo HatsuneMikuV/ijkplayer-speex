@@ -15,7 +15,14 @@ ijkplayer with speex support(iOS)
 - 此ffmpeg是基于IJKPlayer来编译（https://github.com/Bilibili/ijkplayer)
 
 
+## 一键操作
+
+1.如果需要更改cpu架构支持，只需要更改all-compile.sh  对应的架构
+2.更改好后，只需要执行./all-compile.sh  即可，有问题请联系我QQ479069761
+
+
 # ijkplayer
+#### 已更新至k0.8.8
 
  Platform | Build Status
  -------- | ------------

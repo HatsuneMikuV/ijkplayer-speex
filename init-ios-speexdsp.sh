@@ -20,6 +20,8 @@ IJK_SPEEXDSP_FORK=https://github.com/HatsuneMikuV/speexdsp.git
 IJK_SPEEXDSP_COMMIT=SpeexDSP-1.2rc3
 IJK_SPEEXDSP_LOCAL_REPO=extraSpeex/speexdsp
 
+FF_TARGET=$1
+
 set -e
 TOOLS=tools
 
@@ -35,8 +37,7 @@ function pull_fork()
     cd -
 }
 
-pull_fork "armv7"
-pull_fork "armv7s"
-pull_fork "arm64"
-pull_fork "i386"
-pull_fork "x86_64"
+for FF_SH in $FF_TARGET
+do
+    pull_fork $FF_SH
+done
