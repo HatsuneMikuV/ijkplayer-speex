@@ -93,6 +93,8 @@ elif [ "$FF_TARGET" = "clean" ]; then
     do
         cd speex-$ARCH && git clean -xdf && cd -
     done
+    rm -rf build/speex-*
+    echo "clean success"
 else
     echo "Usage:"
     echo "  compile-speex.sh armv7|arm64|i386|x86_64"

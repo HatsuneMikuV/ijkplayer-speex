@@ -92,6 +92,8 @@ elif [ "$FF_TARGET" = "clean" ]; then
     do
         cd speexdsp-$ARCH && git clean -xdf && cd -
     done
+    rm -rf build/speexdsp-*
+    echo "clean success"
 else
     echo "Usage:"
     echo "  compile-speexdsp.sh armv7|arm64|i386|x86_64"

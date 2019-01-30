@@ -92,6 +92,8 @@ elif [ "$FF_TARGET" = "clean" ]; then
     do
         cd openssl-$ARCH && git clean -xdf && cd -
     done
+    rm -rf build/openssl-*
+    echo "clean success"
 else
     echo "Usage:"
     echo "  compile-openssl.sh armv7|arm64|i386|x86_64"
