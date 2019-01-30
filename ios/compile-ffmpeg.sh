@@ -79,6 +79,66 @@ do_lipo_ssl () {
     fi
 }
 
+SPEEX_LIBS="libspeex"
+do_lipo_speex () {
+    LIB_FILE=$1
+    LIPO_FLAGS=
+    for ARCH in $FF_ALL_ARCHS
+    do
+        ARCH_LIB_FILE="$UNI_BUILD_ROOT/build/speex-$ARCH/output/lib/$LIB_FILE"
+        if [ -f "$ARCH_LIB_FILE" ]; then
+            LIPO_FLAGS="$LIPO_FLAGS $ARCH_LIB_FILE"
+        else
+            echo "skip $LIB_FILE of $ARCH";
+        fi
+    done
+
+    if [ "$LIPO_FLAGS" != "" ]; then
+    xcrun lipo -create $LIPO_FLAGS -output $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+        xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+    fi
+}
+
+OGG_LIBS="libogg"
+do_lipo_ogg () {
+    LIB_FILE=$1
+    LIPO_FLAGS=
+    for ARCH in $FF_ALL_ARCHS
+    do
+        ARCH_LIB_FILE="$UNI_BUILD_ROOT/build/ogg-$ARCH/output/lib/$LIB_FILE"
+        if [ -f "$ARCH_LIB_FILE" ]; then
+            LIPO_FLAGS="$LIPO_FLAGS $ARCH_LIB_FILE"
+        else
+            echo "skip $LIB_FILE of $ARCH";
+        fi
+    done
+
+    if [ "$LIPO_FLAGS" != "" ]; then
+        xcrun lipo -create $LIPO_FLAGS -output $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+        xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+    fi
+}
+
+SPEEXDSP_LIBS="libspeexdsp"
+do_lipo_speexdsp () {
+    LIB_FILE=$1
+    LIPO_FLAGS=
+    for ARCH in $FF_ALL_ARCHS
+    do
+        ARCH_LIB_FILE="$UNI_BUILD_ROOT/build/speexdsp-$ARCH/output/lib/$LIB_FILE"
+        if [ -f "$ARCH_LIB_FILE" ]; then
+            LIPO_FLAGS="$LIPO_FLAGS $ARCH_LIB_FILE"
+        else
+            echo "skip $LIB_FILE of $ARCH";
+        fi
+    done
+
+    if [ "$LIPO_FLAGS" != "" ]; then
+        xcrun lipo -create $LIPO_FLAGS -output $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+        xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+    fi
+}
+
 do_lipo_all () {
     mkdir -p $UNI_BUILD_ROOT/build/universal/lib
     echo "lipo archs: $FF_ALL_ARCHS"
@@ -113,6 +173,21 @@ do_lipo_all () {
     for SSL_LIB in $SSL_LIBS
     do
         do_lipo_ssl "$SSL_LIB.a";
+    done
+
+    for OGG_LIB in $OGG_LIBS
+    do
+        do_lipo_ogg "$OGG_LIB.a";
+    done
+
+    for SPEEXDSP_LIB in $SPEEXDSP_LIBS
+    do
+        do_lipo_speexdsp "$SPEEXDSP_LIB.a";
+    done
+
+    for SPEEX_LIB in $SPEEX_LIBS
+    do
+        do_lipo_speex "$SPEEX_LIB.a";
     done
 }
 
