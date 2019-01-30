@@ -17,9 +17,9 @@ ijkplayer with speex support(iOS)
 
 ## 一键操作
 
-1.如果需要更改cpu架构支持，只需要更改all-compile.sh  对应的架构
+>1.如果需要更改cpu架构支持，只需要更改all-compile.sh  对应的架构
 
-2.更改好后，只需要执行./all-compile.sh  即可，有问题请联系我QQ479069761
+>2.更改好后，只需要执行./all-compile.sh  即可，有问题请联系我QQ479069761
 
 
 # ijkplayer
