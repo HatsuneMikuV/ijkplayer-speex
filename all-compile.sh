@@ -23,6 +23,7 @@ for FF_SH in $FF_ALL_SH
 do
     for ARCH in $FF_ALL_ARCHS
     do
+    sh compile-$FF_SH.sh clean
     sh compile-$FF_SH.sh $ARCH
     done
 done
