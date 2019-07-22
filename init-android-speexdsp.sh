@@ -15,24 +15,24 @@
 # limitations under the License.
 #
 
-#IJK_OPENSSL_UPSTREAM=https://github.com/openssl/openssl
-IJK_OPENSSL_UPSTREAM=https://github.com/Bilibili/openssl.git
-IJK_OPENSSL_FORK=https://github.com/Bilibili/openssl.git
-IJK_OPENSSL_COMMIT=OpenSSL_1_0_2h
-IJK_OPENSSL_LOCAL_REPO=extraSpeex/openssl
+IJK_SPEEXDSP_UPSTREAM=https://github.com/xiph/speexdsp.git
+IJK_SPEEXDSP_FORK=https://github.com/HatsuneMikuV/speexdsp.git
+IJK_SPEEXDSP_COMMIT=SpeexDSP-1.2rc3
+IJK_SPEEXDSP_LOCAL_REPO=extraSpeex/speexdsp
 
 set -e
 TOOLS=tools
 
-echo "== pull openssl base =="
-sh $TOOLS/pull-repo-base.sh $IJK_OPENSSL_UPSTREAM $IJK_OPENSSL_LOCAL_REPO
+echo "== pull speexdsp base =="
+sh $TOOLS/pull-repo-base.sh $IJK_SPEEXDSP_UPSTREAM $IJK_SPEEXDSP_LOCAL_REPO
 
 function pull_fork()
 {
-    echo "== pull openssl fork $1 =="
-    sh $TOOLS/pull-repo-ref.sh $IJK_OPENSSL_FORK android/contrib/openssl-$1 ${IJK_OPENSSL_LOCAL_REPO}
-    cd android/contrib/openssl-$1
-    git checkout ${IJK_OPENSSL_COMMIT} -B ijkplayer
+    echo "== pull speexdsp fork $1 =="
+    sh $TOOLS/pull-repo-ref.sh $IJK_SPEEXDSP_FORK android/contrib/speexdsp-$1 ${IJK_SPEEXDSP_LOCAL_REPO}
+    cd android/contrib/speexdsp-$1
+    git checkout ${IJK_SPEEXDSP_COMMIT} -B ijkplayer
+    ./autogen.sh
     cd -
 }
 

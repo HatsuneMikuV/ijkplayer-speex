@@ -17,7 +17,7 @@
 
 set -e
 
-cd extra/jni4android-fork
+cd extraSpeex/jni4android-fork
 ./configure --incdir=../../ijkmedia/ijkj4a --bindir=../bin
 make install
 cd -

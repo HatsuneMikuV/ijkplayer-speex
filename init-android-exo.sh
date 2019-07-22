@@ -18,7 +18,7 @@
 IJK_EXO_UPSTREAM=https://github.com/google/ExoPlayer.git
 IJK_EXO_FORK=https://github.com/google/ExoPlayer.git
 IJK_EXO_COMMIT=r1.5.11
-IJK_EXO_LOCAL_REPO=extra/ExoPlayer
+IJK_EXO_LOCAL_REPO=extraSpeex/ExoPlayer
 
 set -e
 TOOLS=tools
@@ -27,11 +27,11 @@ echo "== pull ExoPlayer base =="
 sh $TOOLS/pull-repo-base.sh $IJK_EXO_UPSTREAM $IJK_EXO_LOCAL_REPO
 
 echo "== pull ExoPlayer fork =="
-cd extra/ExoPlayer
+cd extraSpeex/ExoPlayer
 git checkout ${IJK_EXO_COMMIT} -B ijkplayer
 cd -
 
-SRC_EXO_DIR=extra/ExoPlayer/demo/src/main/java/com/google/android/exoplayer/demo
+SRC_EXO_DIR=extraSpeex/ExoPlayer/demo/src/main/java/com/google/android/exoplayer/demo
 DST_EXO_DIR=android/ijkplayer/ijkplayer-exo/src/main/java/tv/danmaku/ijk/media/exo/demo
 
 mkdir -p $DST_EXO_DIR/player
@@ -48,7 +48,7 @@ function install_java()
 
 install_java player/DashRendererBuilder.java
 install_java player/DemoPlayer.java
-install_java player/ExtractorRendererBuilder.java
+install_java player/extraSpeexctorRendererBuilder.java
 install_java player/HlsRendererBuilder.java
 install_java player/SmoothStreamingRendererBuilder.java
 install_java EventLogger.java

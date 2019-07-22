@@ -19,7 +19,7 @@ IJK_LIBSOXR_UPSTREAM=http://git.code.sf.net/p/soxr/code
 IJK_LIBSOXR_FORK=http://git.code.sf.net/p/soxr/code
 IJK_LIBSOXR_COMMIT=0.1.2
 IJK_LIBSOXR_COMMIT_64=master
-IJK_LIBSOXR_LOCAL_REPO=extra/soxr
+IJK_LIBSOXR_LOCAL_REPO=extraSpeex/soxr
 
 set -e
 TOOLS=tools
@@ -31,7 +31,7 @@ function pull_fork()
 {
     echo "== pull soxr fork $1 =="
     sh $TOOLS/pull-repo-ref.sh $IJK_LIBSOXR_FORK android/contrib/libsoxr-$1 ${IJK_LIBSOXR_LOCAL_REPO}
-    cp extra/android-cmake/android.toolchain.cmake android/contrib/libsoxr-$1
+    cp extraSpeex/android-cmake/android.toolchain.cmake android/contrib/libsoxr-$1
     cd android/contrib/libsoxr-$1
     case "$1" in
         arm64|x86_64)
@@ -48,7 +48,7 @@ function pull_android_toolchain_cmake()
 {
     ANDROID_TOOLCHAIN_CMAKE_UPSTREAM=https://github.com/taka-no-me/android-cmake.git
     echo "== pull android toolchain cmake from $ANDROID_TOOLCHAIN_CMAKE_UPSTREAM =="
-    sh $TOOLS/pull-repo-base.sh $ANDROID_TOOLCHAIN_CMAKE_UPSTREAM extra/android-cmake
+    sh $TOOLS/pull-repo-base.sh $ANDROID_TOOLCHAIN_CMAKE_UPSTREAM extraSpeex/android-cmake
 }
 
 pull_android_toolchain_cmake

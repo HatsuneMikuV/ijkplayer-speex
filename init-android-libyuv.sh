@@ -19,7 +19,7 @@
 IJK_LIBYUV_UPSTREAM=https://github.com/Bilibili/libyuv.git
 IJK_LIBYUV_FORK=https://github.com/Bilibili/libyuv.git
 IJK_LIBYUV_COMMIT=ijk-r0.2.1-dev
-IJK_LIBYUV_LOCAL_REPO=extra/libyuv
+IJK_LIBYUV_LOCAL_REPO=extraSpeex/libyuv
 
 set -e
 TOOLS=tools
