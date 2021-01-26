@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
 
-FF_ALL_ARCHS_CUSTOM_SDK="arm64"
+#FF_ALL_ARCHS_CUSTOM_SDK="arm64"
 #xcode 9.0 & later only arm64
-#FF_ALL_ARCHS_CUSTOM_SDK="arm64 armv7s x86_64 i386 armv7"
+FF_ALL_ARCHS_CUSTOM_SDK="arm64 armv7s x86_64 i386"
 
 
 FF_ALL_ARCHS=$FF_ALL_ARCHS_CUSTOM_SDK
