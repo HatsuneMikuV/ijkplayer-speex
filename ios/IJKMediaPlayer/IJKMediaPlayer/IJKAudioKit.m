@@ -50,11 +50,16 @@
 
     /* Set audio session to mediaplayback */
     NSError *error = nil;
-    if (NO == [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error]) {
+    if (NO == [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&error]) {
         NSLog(@"IJKAudioKit: AVAudioSession.setCategory() failed: %@\n", error ? [error localizedDescription] : @"nil");
         return;
     }
 
+		// Override the current inputs and outputs and route audio to the built-in speaker and microphone.
+
+		[[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker
+																			 error:&error];
+	
     error = nil;
     if (NO == [[AVAudioSession sharedInstance] setActive:YES error:&error]) {
         NSLog(@"IJKAudioKit: AVAudioSession.setActive(YES) failed: %@\n", error ? [error localizedDescription] : @"nil");
